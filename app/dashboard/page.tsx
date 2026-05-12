@@ -24,14 +24,14 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        <div className="mb-5 flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4.5 py-3.5 text-[13px] leading-6 text-amber-900">
+        <div className="mb-5 flex items-start gap-3 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3.5 text-[13px] leading-6 text-amber-900">
           <div className="shrink-0 text-lg">🔎</div>
           <div><strong>Berdasarkan HR Discovery:</strong> Skill ini diassess karena tim Engineering sedang adopsi AI tools tanpa training formal, mengalami perlambatan output, dan belum punya kebijakan AI. Assessment dikonfirmasi oleh data karyawan di bawah.</div>
         </div>
 
         <div className="mb-6 grid grid-cols-4 gap-3.5 max-lg:grid-cols-2 max-sm:grid-cols-1">
           {metrics.map(([label, value, sub, color]) => (
-            <div key={label} className="card p-4.5">
+            <div key={label} className="card p-4">
               <div className="text-xs font-bold uppercase tracking-wider text-muted">{label}</div>
               <div className={`my-1 text-[32px] font-black tracking-[-0.05em] ${color}`}>{value}</div>
               <div className="text-xs text-muted">{sub}</div>

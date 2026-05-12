@@ -116,7 +116,7 @@ function Note({ children, color }: { children: React.ReactNode; color: "green" |
 }
 
 function Clusters() {
-  return <div className="card"><div className="mb-1 font-black">4 Cluster Karyawan Berdasarkan Root Cause</div><div className="mb-5 text-[13px] text-muted">AI mengelompokkan karyawan berdasarkan <em>penyebab</em> gap — bukan hanya besarnya. Setiap cluster butuh intervensi berbeda.</div><div className="grid grid-cols-2 gap-3.5 max-lg:grid-cols-1">{clusters.map(([title, count, desc, solution, cardClass, tagClass]) => <div key={title} className={`rounded-[18px] border p-4.5 ${cardClass}`}><div className="mb-2.5 flex justify-between gap-3"><div className="text-[15px] font-black">{title}</div><span className={`tag ${tagClass}`}>{count}</span></div><p className="mb-2.5 text-[13px] leading-6 text-slate-700">{desc}</p><div className="text-xs font-black text-slate-800">{solution}</div></div>)}</div></div>;
+  return <div className="card"><div className="mb-1 font-black">4 Cluster Karyawan Berdasarkan Root Cause</div><div className="mb-5 text-[13px] text-muted">AI mengelompokkan karyawan berdasarkan <em>penyebab</em> gap — bukan hanya besarnya. Setiap cluster butuh intervensi berbeda.</div><div className="grid grid-cols-2 gap-3.5 max-lg:grid-cols-1">{clusters.map(([title, count, desc, solution, cardClass, tagClass]) => <div key={title} className={`rounded-[18px] border p-4 ${cardClass}`}><div className="mb-2.5 flex justify-between gap-3"><div className="text-[15px] font-black">{title}</div><span className={`tag ${tagClass}`}>{count}</span></div><p className="mb-2.5 text-[13px] leading-6 text-slate-700">{desc}</p><div className="text-xs font-black text-slate-800">{solution}</div></div>)}</div></div>;
 }
 
 function Quotes() {
