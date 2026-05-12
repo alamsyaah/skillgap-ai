@@ -39,32 +39,34 @@ Instead of a bar chart of scores, HR receives:
 - **Verbatim employee quotes** from open-text responses
 - **Targeted intervention plan** per cluster — not one course for everyone
 
-## Why It's Different
+## Running the Next.js App
 
-| | Standard Assessment | SkillGap AI |
-|---|---|---|
-| Starts with | HR guessing which skills to assess | HR describing their team's real problems |
-| Employee experience | Rate yourself 1–5 | Adaptive — low scores trigger diagnostic follow-up |
-| Output | Average score per skill | Root causes + employee clusters + targeted interventions |
-| Training recommendation | One course for everyone | Different intervention per root cause cluster |
-| Budget efficiency | Low — many employees get the wrong solution | High — every intervention is targeted |
-
-## Prototype
-
-Two HTML prototypes are included — open them directly in a browser, no build step needed.
-
-| File | Description |
-|---|---|
-| `skillgap-ai-prototype.html` | Full 4-step prototype: HR Discovery → AI Recommendation → Employee Assessment → HR Dashboard |
-| `ai-skill-assessment-prototype.html` | Earlier version: Assessment Builder → Employee Test → Result Dashboard |
-
-### Running the Prototype
+Install dependencies:
 
 ```bash
-open skillgap-ai-prototype.html
+npm install
 ```
 
-Or open the file directly in any browser.
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+## Routes
+
+| Route | Description |
+|---|---|
+| `/` | Overview and product story |
+| `/discovery` | HR Discovery wizard and AI skill recommendation |
+| `/assess` | Adaptive employee skill assessment |
+| `/dashboard` | HR skill gap dashboard and intervention plan |
 
 ## Target Users
 
@@ -74,7 +76,7 @@ Or open the file directly in any browser.
 
 ## Background
 
-This prototype was built during a Ruangguru internal hackathon. The initial idea was an AI skill assessment tool, but mentor feedback surfaced a deeper problem: most skill assessment data (like engagement surveys rated 1–5) gives companies numbers without context. 
+This prototype was built during a Ruangguru internal hackathon. The initial idea was an AI skill assessment tool, but mentor feedback surfaced a deeper problem: most skill assessment data (like engagement surveys rated 1–5) gives companies numbers without context.
 
 The PES (Employee Engagement Survey) format was used as an analogy — if an employee rates "I would recommend this company as a great place to work" as a 2, HR knows there's a problem but has no idea what it is or how to fix it. SkillGap AI applies the same diagnostic thinking to skill gaps.
 

@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: 241 245 249;
+  --color-text: 15 23 42;
+  --color-muted: 100 116 139;
+  --color-primary: 79 70 229;
+  --color-secondary: 14 165 233;
+  --color-success: 16 185 129;
+  --color-warning: 245 158 11;
+  --color-danger: 239 68 68;
+  --color-orange: 249 115 22;
+  --color-border: 226 232 240;
+  --color-surface: 255 255 255;
+  --color-soft: 248 250 252;
+
+  --radius-button: 12px;
+  --radius-card: 22px;
+  --radius-panel: 26px;
+
+  --shadow-card: 0 12px 40px rgba(15, 23, 42, 0.06);
+  --shadow-panel: 0 16px 50px rgba(15, 23, 42, 0.07);
+  --shadow-glow: 0 14px 36px rgba(79, 70, 229, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: rgb(var(--color-bg));
+  color: rgb(var(--color-text));
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto max-w-page px-8 py-11 pb-20 max-sm:px-5 max-sm:py-8;
+  }
+
+  .page-title {
+    @apply mb-8 flex items-end justify-between gap-5 max-md:flex-col max-md:items-start;
+  }
+
+  .page-title h1,
+  .page-title h2 {
+    @apply mb-2 text-4xl font-black tracking-[-0.06em] text-text;
+  }
+
+  .page-title p {
+    @apply max-w-2xl text-[15px] leading-7 text-muted;
+  }
+
+  .card {
+    @apply rounded-card border border-border bg-surface p-6 shadow-card;
+  }
+
+  .panel {
+    @apply rounded-panel border border-border bg-surface p-8 shadow-panel;
+  }
+
+  .btn {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-button border-0 px-[18px] py-3 font-bold transition-transform duration-150 hover:-translate-y-0.5;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-br from-primary to-secondary text-white shadow-glow;
+  }
+
+  .btn-secondary {
+    @apply border border-white/15 bg-white/10 text-white;
+  }
+
+  .btn-light {
+    @apply border border-border bg-white text-primary;
+  }
+
+  .btn-ghost {
+    @apply bg-indigo-50 text-primary;
+  }
+
+  .tag {
+    @apply inline-flex rounded-pill px-2 py-1 text-[11px] font-black;
+  }
+
+  .tag-primary {
+    @apply bg-indigo-50 text-primary;
+  }
+
+  .tag-warning {
+    @apply bg-amber-100 text-amber-800;
+  }
+
+  .tag-muted {
+    @apply bg-slate-100 text-muted;
+  }
+
+  .tag-danger {
+    @apply bg-red-100 text-red-800;
+  }
+
+  .tag-success {
+    @apply bg-green-100 text-green-800;
+  }
+
+  .tag-purple {
+    @apply bg-violet-100 text-violet-800;
+  }
+
+  .choice-btn {
+    @apply flex w-full cursor-pointer items-center gap-3 rounded-[14px] border-2 border-border bg-soft px-4 py-3.5 text-left text-sm font-semibold text-slate-700 transition hover:border-indigo-500 hover:bg-indigo-50 hover:text-primary;
+  }
+
+  .choice-btn-selected {
+    @apply border-primary bg-indigo-50 text-primary;
+  }
+
+  .checkbox-pill {
+    @apply flex w-full cursor-pointer items-start gap-3 rounded-[14px] border-2 border-border bg-soft px-4 py-3 text-left text-[13px] font-semibold text-slate-700 transition hover:border-indigo-500 hover:bg-indigo-50 hover:text-primary;
+  }
+
+  .checkbox-pill-selected {
+    @apply border-primary bg-indigo-50 text-primary;
+  }
+
+  .side-panel {
+    @apply sticky top-24 rounded-card border border-border bg-white p-5 max-lg:static;
+  }
+
+  .wizard-step {
+    @apply flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-[13px] font-bold text-muted;
+  }
+
+  .wizard-step-active {
+    @apply bg-indigo-50 text-primary;
+  }
+
+  .wizard-step-done {
+    @apply text-emerald-700;
+  }
+
+  .step-dot {
+    @apply grid size-[22px] shrink-0 place-items-center rounded-pill bg-slate-200 text-[11px] font-black;
+  }
+
+  .wizard-step-active .step-dot {
+    @apply bg-primary text-white;
+  }
+
+  .wizard-step-done .step-dot {
+    @apply bg-green-100 text-emerald-700;
+  }
+
+  .progress-track {
+    @apply mb-2 h-1.5 rounded-pill bg-slate-200;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-pill transition-all duration-300;
+  }
+
+  .spinner {
+    @apply size-[52px] rounded-pill border-4 border-slate-200;
+    animation: spin 0.8s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
